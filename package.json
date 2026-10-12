@@ -1,0 +1,64 @@
+{
+	"name": "n8n-nodes-notifly",
+	"version": "0.1.0",
+	"description": "n8n community node for Notifly: trigger notification workflows, manage subscribers and topics, and react to new notifications.",
+	"license": "MIT",
+	"homepage": "https://notifly.io",
+	"keywords": [
+		"n8n-community-node-package",
+		"n8n",
+		"notifly",
+		"notifications",
+		"push-notifications",
+		"in-app-notifications",
+		"email",
+		"sms"
+	],
+	"author": {
+		"name": "Devino Solutions",
+		"email": "support@notifly.io",
+		"url": "https://notifly.io"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/DevinoSolutions/n8n-nodes-notifly.git"
+	},
+	"bugs": {
+		"url": "https://github.com/DevinoSolutions/n8n-nodes-notifly/issues"
+	},
+	"scripts": {
+		"build": "n8n-node build",
+		"build:watch": "tsc --watch",
+		"dev": "n8n-node dev",
+		"lint": "n8n-node lint",
+		"lint:fix": "n8n-node lint --fix",
+		"release": "n8n-node release",
+		"prepublishOnly": "n8n-node prerelease"
+	},
+	"files": [
+		"dist",
+		"!dist/tsconfig.tsbuildinfo",
+		"!dist/**/*.map"
+	],
+	"n8n": {
+		"n8nNodesApiVersion": 1,
+		"strict": true,
+		"credentials": [
+			"dist/credentials/NotiflyApi.credentials.js"
+		],
+		"nodes": [
+			"dist/nodes/Notifly/Notifly.node.js",
+			"dist/nodes/NotiflyTrigger/NotiflyTrigger.node.js"
+		]
+	},
+	"devDependencies": {
+		"@n8n/node-cli": "*",
+		"eslint": "9.32.0",
+		"prettier": "3.6.2",
+		"release-it": "^21.1.0",
+		"typescript": "5.9.2"
+	},
+	"peerDependencies": {
+		"n8n-workflow": "*"
+	}
+}
